@@ -17,7 +17,7 @@ canvas.setAttribute('width', 400);
 canvas.setAttribute('height', 400);
 
 //Rectangle canvas
-ctx.strokeStyle = 'black'; //Couleur du cadre
+
 ctx.strokeRect(0, 0, 400, 400); //Taille du cadre
 
 
@@ -50,8 +50,8 @@ drawLine()
 
 function drawLine(ctx, x1, y1, x2, y2) {
     ctx.beginPath();
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.stroke();
