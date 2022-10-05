@@ -4,6 +4,9 @@ let isDrawing = false;
 let x = 0;
 let y = 0;
 
+var myRandomColor = 'black'
+var btC = document.getElementById("btC");
+btC.addEventListener("click", btCouleur, false);
 
 //Création canvas
 canvas = document.getElementById('canvas');
@@ -50,7 +53,7 @@ drawLine()
 
 function drawLine(ctx, x1, y1, x2, y2) {
     ctx.beginPath();
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = myRandomColor;
     ctx.lineWidth = 2;
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
@@ -58,7 +61,13 @@ function drawLine(ctx, x1, y1, x2, y2) {
     ctx.closePath();
 }
 
+function btCouleur() {
+    if (document.getElementById("btC")) {
+        myRandomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        return myRandomColor;
+    }
 
+}
 
 
 //Image de fond
