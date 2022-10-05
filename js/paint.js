@@ -74,6 +74,7 @@ function btCouleur() {
 function clear() {
     if (document.getElementById("btC")) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        myRandomColor = 'black'
     }
 }
 
