@@ -5,11 +5,18 @@ let x = 0;
 let y = 0;
 
 var myRandomColor = 'black'
+var lataille = 2;
+
 var btC = document.getElementById("btC");
 btC.addEventListener("click", btCouleur, false);
 var btR = document.getElementById("btR");
 btR.addEventListener("click", clear, false);
+var changeT = document.getElementById("changeT");
+changeT.addEventListener("click", changeTaille, false);
 
+var selectElmt = document.getElementById("liste");
+var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
+var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
 //Création canvas
 canvas = document.getElementById('canvas');
 ctx = canvas.getContext('2d');
@@ -56,7 +63,7 @@ drawLine()
 function drawLine(ctx, x1, y1, x2, y2) {
     ctx.beginPath();
     ctx.strokeStyle = myRandomColor;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = lataille;
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.stroke();
@@ -75,6 +82,19 @@ function clear() {
     if (document.getElementById("btC")) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         myRandomColor = 'black'
+    }
+}
+
+function changeTaille() {
+    if (document.getElementById("changeT")) {
+        if (textselectionne == "Taille:5") {
+            lataille = 5;
+
+        } else if (textselectionne == "Taille:8") {
+            lataille = 8;
+        } else if (textselectionne == "Taille:15") {
+            lataille = 15;
+        }
     }
 }
 
