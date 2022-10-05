@@ -7,6 +7,8 @@ let y = 0;
 var myRandomColor = 'black'
 var btC = document.getElementById("btC");
 btC.addEventListener("click", btCouleur, false);
+var btR = document.getElementById("btR");
+btR.addEventListener("click", clear, false);
 
 //Création canvas
 canvas = document.getElementById('canvas');
@@ -69,6 +71,11 @@ function btCouleur() {
 
 }
 
+function clear() {
+    if (document.getElementById("btC")) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+}
 
 //Image de fond
 /*
